@@ -50,3 +50,19 @@ When working with functions, you can use the compose() function to create comple
 /**Topic this keyword, Definition: this keyword refers to the current execution context, often associated with the object that called the function    **/
 
 /**SEARCH: function composition techniques     **/
+
+//**Notes:  inside setInterval useState is very different don't try to update based on accessign value and assign it; Remember what did in Create timer question    **/
+
+/**Notes:  Object.seal() and Object.freeze() are methods used to control the mutability of objects    **/
+
+/**Notes:  Object.seal() is a method that seals an object, preventing the addition or deletion of properties, while allowing the modification of existing properties.    **/
+
+/**Notes:  Object.freeze() is a method that freezes an object, making it completely immutable.    **/
+
+
+/**Notes:  “use strict” was introduced in ES5 and enables strict mode in JavaScript. This strict mode throws error when developing the code and prevent the developer to use the bad practices,     **/
+
+/**Notes:  Note: This Strict mode is enabled by default if the application uses Module system.    **/
+
+/**Notes:  In normal mode if the function is not explicitly called from an object, it will have ‘window’ object as ‘this’ but in strict mode it will be undefined    **/
+
