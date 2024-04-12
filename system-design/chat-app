@@ -1,0 +1,65 @@
+Chat app like:
+First screen
+- Search Chat
+- List of ongoing chats
+  - List has name, avatar, last message preview
+  - one-2-one or may be can have group chat also
+
+Second screen
+- top
+ - person details
+ - messages on left and right side
+ - Send messsage option
+
+
+
+Functional Requirement
+- Sending a message
+- Receiving a message
+- See the history of message 
+
+- Message real time: yes
+- Format of message: Start with text+emoji. Can discuss image support
+- Application work on offline: outgoing message should be stored and sent out when the application goes online and users should still be allowed to browse message when offline
+- Group conversation: ?
+
+
+
+Important Questions
+- Appn on different tabs in the same browser
+- Appn on different devices/browser
+- Appn goes offline during usages
+  - outgoing messages which have not fulfilled: should be retried when the appn goes online again 
+  - Message are being sent while appn is offline: Message should be sent when appn next goes online. Didn't understood this?
+
+
+Storage:
+Client side database
+- Different tabs in the same browser access the same client side database
+- Ensure consistent data between tabs and helps to solve UI consistency 
+- Point to note that we should not insert same message into the database twice when we are notifiied a new message event
+
+
+DataSyncer:
+Responsible for syncing the client database with the server
+
+Sending message:
+Outgoing message are first inserted into the database instead and they are marked as pending. Pending message are also reflected immediated in the UI. In chat appn indicators are there to indicate the various delivery statuses.
+
+As there can be multiple messages being sent in parallel across different conversations (and in real applications, even more actions like reactions, deleting messages), there is a need for a scheduler to ensure that actions are sent to the server in the right order, request statuses are tracked, request failures are retried, etc.
+
+
+
+Receiving real time updates:
+
+
+
+
+SSR vs CSR:
+- highly interactive due to high freq of sending and receiving messages. Pages required fair amount of javascript.
+- Message accessed when logged in
+- Msgs need not to be indexed by search engine
+- Fast initial loading speed is  desired but not the most crucial
+
+Based on above CSR and SPA is preferred. SSR would made it SEO friendly.
+
